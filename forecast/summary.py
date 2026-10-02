@@ -80,7 +80,7 @@ def template(f: dict) -> list[str]:
         s += f" — это на {pct(d)} {'выше' if d > 0 else 'ниже'} текущего темпа продаж"
     lines.append(s + ".")
 
-    if f["top_product"] and f["products_total"] > 1:
+    if f["top_product"] and f["products_total"] > 1 and f["scope"] == "все товары":
         n_a = len(f["a_class_products"])
         lines.append(f"Главный товар — «{f['top_product']}»: {pct(f['top_share_pct'])} выручки. "
                      f"80% выручки дают {n_a} из {f['products_total']} товаров (группа A) — их наличие важнее всего.")
